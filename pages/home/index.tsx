@@ -1,39 +1,39 @@
-import { FC } from "react";
-import { useRouter } from "next/router";
+import { FC } from 'react'
+import { useRouter } from 'next/router'
 
-import { Container, Header } from "components";
-import { ROUTES } from "utils";
-import { useAuthContext } from "hooks/useAuthContext";
+import { Container, Header } from 'components'
+import { ROUTES } from 'utils'
+import { useAuthContext } from 'hooks/useAuthContext'
 
-import { HolderFlowIcon, VerifierFlowIcon, IssuerFlowIcon } from "assets/index";
+import { HolderFlowIcon, VerifierFlowIcon, IssuerFlowIcon } from 'assets/index'
 
-import * as S from "./home.styled";
+import * as S from './home.styled'
 
 export const Home: FC = () => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const { updateAuthState } = useAuthContext();
+  const { updateAuthState } = useAuthContext()
 
   return (
     <>
-      <Header title="Home" />
+      <Header title='Home' />
 
-      <Container title="Please select one of the following options">
-        <S.Wrapper className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+      <Container title='Please select one of the following options'>
+        <S.Wrapper className='grid lg:grid-cols-3 gap-12 lg:gap-16'>
           <S.Card
-            alignItems="center"
-            direction="row"
-            justifyContent="space-between"
+            alignItems='center'
+            direction='row'
+            justifyContent='space-between'
             gap={8}
             onClick={() => {
-              updateAuthState({ appFlow: "holder" });
-              router.push(ROUTES.holder.home);
+              updateAuthState({ appFlow: 'holder' })
+              router.push(ROUTES.holder.home)
             }}
           >
             <S.Details>
-              <S.Heading variant="h6">Collect tickets</S.Heading>
-              <S.Para variant="p1">
-                Collect your tickets or view tickets stored in your wallet
+              <S.Heading variant='h6'>Collect certificate</S.Heading>
+              <S.Para variant='p1'>
+                Collect your certificates or view them stored in your wallet
               </S.Para>
             </S.Details>
             <S.Icon>
@@ -42,19 +42,19 @@ export const Home: FC = () => {
           </S.Card>
 
           <S.Card
-            alignItems="center"
-            direction="row"
-            justifyContent="space-between"
+            alignItems='center'
+            direction='row'
+            justifyContent='space-between'
             gap={8}
             onClick={() => {
-              updateAuthState({ appFlow: "verifier" });
-              router.push(ROUTES.verifier.welcome);
+              updateAuthState({ appFlow: 'verifier' })
+              router.push(ROUTES.verifier.welcome)
             }}
           >
             <S.Details>
-              <S.Heading variant="h6">Verify tickets</S.Heading>
-              <S.Para variant="p1">
-                Verify tickets with a QR code scanner
+              <S.Heading variant='h6'>Verify certificate</S.Heading>
+              <S.Para variant='p1'>
+                Verify certificates with a QR code scanner
               </S.Para>
             </S.Details>
             <S.Icon>
@@ -63,19 +63,19 @@ export const Home: FC = () => {
           </S.Card>
 
           <S.Card
-            alignItems="center"
-            direction="row"
-            justifyContent="space-between"
+            alignItems='center'
+            direction='row'
+            justifyContent='space-between'
             gap={8}
             onClick={() => {
-              updateAuthState({ appFlow: "issuer" });
-              router.push(ROUTES.issuer.credentialForm);
+              updateAuthState({ appFlow: 'issuer' })
+              router.push(ROUTES.issuer.credentialForm)
             }}
           >
             <S.Details>
-              <S.Heading variant="h6">Issue ticket</S.Heading>
-              <S.Para variant="p1">
-                Issue tickets to your customers easily
+              <S.Heading variant='h6'>Issue certificate</S.Heading>
+              <S.Para variant='p1'>
+                Issue certificates to your students easily
               </S.Para>
             </S.Details>
             <S.Icon>
@@ -85,6 +85,6 @@ export const Home: FC = () => {
         </S.Wrapper>
       </Container>
     </>
-  );
-};
-export default Home;
+  )
+}
+export default Home
