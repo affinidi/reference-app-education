@@ -11,8 +11,12 @@ const ClaimVc: FC = () => {
   const { authState, updateAuthState } = useAuthContext()
   const { push } = useRouter()
   const searchParams = useSearchParams()
-  const credentialOfferRequestToken = searchParams.get('credentialOfferRequestToken')
-  const { data, refetch } = useClaimCredentialQuery(authState.authorizedAsHolder ? authState.vcOfferToken : '')
+  const credentialOfferRequestToken = searchParams.get(
+    'credentialOfferRequestToken'
+  )
+  const { data, refetch } = useClaimCredentialQuery(
+    authState.authorizedAsHolder ? authState.vcOfferToken : ''
+  )
 
   useEffect(() => {
     if (credentialOfferRequestToken !== null) {
@@ -28,9 +32,13 @@ const ClaimVc: FC = () => {
     }
   }, [data, push])
 
+  if (!authState.authorizedAsHolder) {
+    return <Spinner />
+  }
+
   return (
     <>
-      <Header title="Claim credential" />
+      <Header title='Claim credential' />
       <Container>
         <Spinner />
       </Container>

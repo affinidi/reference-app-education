@@ -3,7 +3,10 @@ import styled from 'styled-components'
 import { pxToRem } from 'utils'
 import { Typography } from 'components'
 
-export const ResultTitle = styled(Typography)<{ $isVerified?: boolean; $isIssuance?: boolean }>`
+export const ResultTitle = styled(Typography)<{
+  $isVerified?: boolean
+  $isIssuance?: boolean
+}>`
   color: ${(props) =>
     props.$isIssuance || props.$isVerified
       ? props.theme.colors.utility.success[70]

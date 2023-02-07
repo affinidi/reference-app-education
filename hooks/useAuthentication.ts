@@ -3,9 +3,9 @@ import { Dispatch, SetStateAction, useState } from 'react'
 
 import { cloudWalletService } from 'services/cloud-wallet'
 import {
-  userManagementService,
   AuthConfirmationInput,
   isHttpError,
+  userManagementService,
 } from 'services/user-management'
 import {
   ConfirmSignInInput,
@@ -135,7 +135,6 @@ export type UserState = {
   authorizedAsHolder: boolean
   loading: boolean
   vcOfferToken: string
-  appFlow: 'holder' | 'issuer' | 'verifier' | null
 }
 
 const BASIC_STATE: UserState = {
@@ -147,7 +146,6 @@ const BASIC_STATE: UserState = {
   authorizedAsIssuer: false,
   loading: true,
   vcOfferToken: '',
-  appFlow: null,
 }
 
 export const useAuthentication = () => {

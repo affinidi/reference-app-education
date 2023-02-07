@@ -1,18 +1,14 @@
 import { FC } from 'react'
 import { useRouter } from 'next/router'
 
-import { Container, Header } from 'components'
 import { ROUTES } from 'utils'
-import { useAuthContext } from 'hooks/useAuthContext'
-
-import { HolderFlowIcon, VerifierFlowIcon, IssuerFlowIcon } from 'assets/index'
+import { HolderFlowIcon, IssuerFlowIcon, VerifierFlowIcon } from 'assets'
+import { Container, Header } from 'components'
 
 import * as S from './home.styled'
 
 export const Home: FC = () => {
   const router = useRouter()
-
-  const { updateAuthState } = useAuthContext()
 
   return (
     <>
@@ -26,7 +22,6 @@ export const Home: FC = () => {
             justifyContent='space-between'
             gap={8}
             onClick={() => {
-              updateAuthState({ appFlow: 'holder' })
               router.push(ROUTES.holder.home)
             }}
           >
@@ -47,7 +42,6 @@ export const Home: FC = () => {
             justifyContent='space-between'
             gap={8}
             onClick={() => {
-              updateAuthState({ appFlow: 'verifier' })
               router.push(ROUTES.verifier.welcome)
             }}
           >
@@ -68,7 +62,6 @@ export const Home: FC = () => {
             justifyContent='space-between'
             gap={8}
             onClick={() => {
-              updateAuthState({ appFlow: 'issuer' })
               router.push(ROUTES.issuer.credentialForm)
             }}
           >
