@@ -10,16 +10,21 @@ const Verifier: FC = () => {
 
   return (
     <>
-      <Header title="Welcome" hasBackIcon />
+      <Header title='Welcome' hasBackIcon />
 
       <Container>
-        <div className="grid lg:grid-cols-3 lg:gap-16">
-          <Box alignItems="center" className="lg:col-start-2">
-            <ScanQr />
-            <S.WelcomeMessage variant="p1">
-              Welcome to the Eventi ticket scanner. Click “scan QR code” to start checking tickets.
+        <div className='grid lg:grid-cols-3 lg:gap-16'>
+          <Box alignItems='center' className='lg:col-start-2'>
+            <S.IconBox>
+              <ScanQr />
+            </S.IconBox>
+            <S.WelcomeMessage variant='p1'>
+              Welcome to the StudID scanner. Tap “scan QR code” to start
+              checking certificates.
             </S.WelcomeMessage>
-            <S.ScanButton onClick={() => router.push(ROUTES.verifier.scan)}>SCAN QR CODE</S.ScanButton>
+            <S.ScanButton onClick={() => router.push(ROUTES.verifier.scan)}>
+              SCAN QR CODE
+            </S.ScanButton>
           </Box>
         </div>
       </Container>
