@@ -19,6 +19,8 @@ export const ResultPara = styled(Typography)`
 `
 
 export const ImgWrapper = styled.div`
+  margin-top: ${pxToRem(48)};
+
   svg {
     max-width: 100%;
     height: auto;

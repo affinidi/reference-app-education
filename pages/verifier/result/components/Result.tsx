@@ -14,7 +14,12 @@ export type ResultProps = {
   pathTo: string
 }
 
-export const Result: FC<ResultProps> = ({ isLoading, isValid, error, pathTo }) => {
+export const Result: FC<ResultProps> = ({
+  isLoading,
+  isValid,
+  error,
+  pathTo,
+}) => {
   const router = useRouter()
   const { authState } = useAuthContext()
 
@@ -26,7 +31,11 @@ export const Result: FC<ResultProps> = ({ isLoading, isValid, error, pathTo }) =
     return (
       <>
         <Header
-          title={authState.appFlow === 'verifier' ? 'QR code scanned' : 'Ticket Issued'}
+          title={
+            authState.appFlow === 'verifier'
+              ? 'QR code scanned'
+              : 'Ticket Issued'
+          }
           hasBackIcon
         />
         <Container>
@@ -41,23 +50,33 @@ export const Result: FC<ResultProps> = ({ isLoading, isValid, error, pathTo }) =
   return (
     <>
       <Header
-        title={authState.appFlow === 'verifier' ? 'QR code scanned' : 'Ticket issued'}
+        title={
+          authState.appFlow === 'verifier' ? 'QR code scanned' : 'Ticket issued'
+        }
         hasBackIcon
       />
       <Container>
-        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
-          <Box className="lg:col-start-2" alignItems="center">
-            <ResultContent isValid={isResultValid} isIssuance={authState.appFlow === 'issuer'} />
-            <S.ResultPara variant="p1">
+        <div className='grid lg:grid-cols-3 gap-12 lg:gap-16'>
+          <Box className='lg:col-start-2' alignItems='center'>
+            <ResultContent
+              isValid={isResultValid}
+              isIssuance={authState.appFlow === 'issuer'}
+            />
+            <S.ResultPara variant='p1'>
               {authState.appFlow === 'verifier'
                 ? isResultValid
-                  ? 'Ticket successfully checked.'
-                  : 'Ticket is invalid'
-                : 'Your ticket has been issued.'}
+                  ? 'Certificate successfully checked.'
+                  : 'Certificate is invalid'
+                : 'Certificate has been issued.'}
             </S.ResultPara>
 
-            <S.IssueTicketButton variant="outlined" onClick={() => router.push(pathTo)}>
-              {authState.appFlow === 'verifier' ? 'SCAN NEXT QR CODE' : 'ISSUE NEXT TICKET'}
+            <S.IssueTicketButton
+              variant='outlined'
+              onClick={() => router.push(pathTo)}
+            >
+              {authState.appFlow === 'verifier'
+                ? 'SCAN NEXT QR CODE'
+                : 'ISSUE NEXT CERTIFICATE'}
             </S.IssueTicketButton>
           </Box>
         </div>

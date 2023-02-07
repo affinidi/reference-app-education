@@ -28,9 +28,9 @@ export const ResultContent: FC<ResultContentProps> = ({
     <S.ResultTitle variant='h5' $isVerified={isValid} $isIssuance={isIssuance}>
       {isValid
         ? isIssuance
-          ? 'Ticket successfully issued'
-          : 'Valid ticket'
-        : 'Invalid ticket'}
+          ? 'Certificate successfully issued'
+          : 'Valid certificate'
+        : 'Invalid certificate'}
     </S.ResultTitle>
   </>
 )
