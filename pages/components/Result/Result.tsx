@@ -43,7 +43,7 @@ export const Result: FC<ResultProps> = ({
   return (
     <>
       <Header
-        title={isVerifier ? 'QR code scanned' : 'Ticket issued'}
+        title={isVerifier ? 'QR code scanned' : 'Certificate issued'}
         hasBackIcon
       />
       <div className='grid lg:grid-cols-3 gap-12 lg:gap-16'>

@@ -18,22 +18,24 @@ const TicketCard: FC<TicketCardProps> = ({ credential, isValid }) => {
   return (
     <Ticket
       isValid={isValid}
-      onClick={() => router.push(`${ROUTES.holder.credential}/${credential.credentialId}`)}
+      onClick={() =>
+        router.push(`${ROUTES.holder.credential}/${credential.credentialId}`)
+      }
     >
       <Box gap={32}>
         <Box>
-          <Typography variant="h6">{credential.title}</Typography>
-          <Typography variant="s2">Entry Ticket</Typography>
+          <Typography variant='h6'>{credential.title}</Typography>
+          <Typography variant='s2'>Entry Ticket</Typography>
         </Box>
 
-        <Box direction="row" gap={32}>
+        <Box direction='row' gap={32}>
           <Box>
-            <Typography variant="c1">Start Date</Typography>
-            <Typography variant="p4">{credential.date}</Typography>
+            <Typography variant='c1'>Start Date</Typography>
+            <Typography variant='p4'>{credential.date}</Typography>
           </Box>
           <Box>
-            <Typography variant="c1">Start Time</Typography>
-            <Typography variant="p4">{credential.time}</Typography>
+            <Typography variant='c1'>Start Time</Typography>
+            <Typography variant='p4'>{credential.time}</Typography>
           </Box>
         </Box>
       </Box>

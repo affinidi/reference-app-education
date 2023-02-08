@@ -23,7 +23,7 @@ const Home: FC = () => {
   if (isLoading) {
     return (
       <>
-        <Header title='Your tickets' />
+        <Header title='Your certificates' />
         <Container>
           <Spinner />
         </Container>
@@ -34,7 +34,7 @@ const Home: FC = () => {
   if (error) {
     return (
       <>
-        <Header title='Your tickets' />
+        <Header title='Your certificates' />
         <Container>
           <div className='grid justify-content-center'>
             {error && <Typography variant='e1'>{error?.message}</Typography>}
@@ -53,15 +53,15 @@ const Home: FC = () => {
   if (tickets.length === 0) {
     return (
       <>
-        <Header title='Your tickets' />
+        <Header title='Your certificates' />
         <Container>
           <div className='grid justify-content-center'>
-            <Typography align='center' variant='p2'>
-              You don&apos;t have any tickets yet.
-            </Typography>
             <S.IconContainer>
               <NoTicket />
             </S.IconContainer>
+            <Typography align='center' variant='p2'>
+              You don’t have any certificates yet.{' '}
+            </Typography>
           </div>
         </Container>
       </>
@@ -118,7 +118,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Header title='Your tickets' />
+      <Header title='Your certificates' />
 
       {validTickets.length > 0 && (
         <Container>
