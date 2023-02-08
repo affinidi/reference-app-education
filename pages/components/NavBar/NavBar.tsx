@@ -1,14 +1,11 @@
 import { FC } from 'react'
 
-import EventiLogoIcon from 'public/images/eventi-logo-icon.svg'
-import CloseIcon from 'public/images/icon-close.svg'
-import MenuIcon from 'public/images/icon-menu.svg'
-import { Typography, Container, Modal } from 'components'
+import { Typography, Modal } from 'components'
 
 import { useNavBar } from './useNavBar'
 import * as S from './NavBar.styled'
-import Image from 'next/image'
 import StudId from 'assets/studId'
+import { CloseMenuIcon, MenuIcon } from 'assets'
 
 const NavBar: FC = () => {
   const {
@@ -34,18 +31,14 @@ const NavBar: FC = () => {
           <>
             {isMenuOpen ? (
               <S.IconWrapper>
-                <Image
-                  src={CloseIcon}
-                  alt='Close menu'
+                <CloseMenuIcon
                   onClick={() => setIsMenuOpen(false)}
                   aria-label='menu-close-icon'
                 />
               </S.IconWrapper>
             ) : (
               <S.IconWrapper>
-                <Image
-                  src={MenuIcon}
-                  alt='Open menu'
+                <MenuIcon
                   onClick={() => setIsMenuOpen(true)}
                   aria-label='menu-open-icon'
                 />

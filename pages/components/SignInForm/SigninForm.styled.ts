@@ -12,7 +12,7 @@ export const Title = styled(Typography)`
 `
 
 export const ButtonWrapper = styled(Button)`
-  margin-top: ${pxToRem(48)};
+  margin: ${pxToRem(48)} 0;
 
   @media (max-width: 1024px) {
     margin-top: ${pxToRem(40)};

@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 
 import { JSON_SCHEMA_URL } from 'utils'
 import { useAuthContext } from 'hooks/useAuthContext'
-import { Container, Header, Input, Spinner, Textarea } from 'components'
+import { Container, Header, Input, Spinner } from 'components'
 
 import { initialValues, useCredentialForm } from './useCredentialForm'
 import * as S from './CredentialForm.styled'
@@ -31,18 +31,18 @@ const CredentialForm: FC = () => {
               {(formikProps) => (
                 <form id='form' onSubmit={formikProps.handleSubmit}>
                   <S.Title variant='p1'>
-                    Please fill in the form below to issue a credential.
+                    Please fill in the form below to issue a certificate.
                   </S.Title>
 
                   <Input label='Schema URL' value={JSON_SCHEMA_URL} disabled />
 
-                  <S.Heading variant='h6'>Event details</S.Heading>
+                  <S.Heading variant='h6'>Certificate details</S.Heading>
 
                   <div className='grid lg:grid-cols-2 lg:gap-x-8'>
                     <S.InputWrapper
-                      label='Event name'
-                      placeholder='Enter event name'
-                      name='eventName'
+                      label='Course title'
+                      placeholder='Enter course title'
+                      name='courseTitle'
                       maxLength={100}
                       value={formikProps.values.eventName}
                       onChange={(_, event) => formikProps.handleChange(event)}
@@ -59,9 +59,9 @@ const CredentialForm: FC = () => {
                       onBlur={formikProps.handleBlur}
                     />
                     <S.InputWrapper
-                      label='Event location'
-                      placeholder='Enter event location'
-                      name='eventLocation'
+                      label='Issuing institution'
+                      placeholder='Issuing institution'
+                      name='issuingInstitution'
                       maxLength={500}
                       value={formikProps.values.eventLocation}
                       onChange={(_, event) => formikProps.handleChange(event)}
@@ -78,9 +78,9 @@ const CredentialForm: FC = () => {
                       onBlur={formikProps.handleBlur}
                     />
                     <S.InputWrapper
-                      label='Start date & time'
-                      name='eventStartDateTime'
-                      type='datetime-local'
+                      label='Date of completion'
+                      name='DateOfCompletion'
+                      type='date'
                       value={formikProps.values.eventStartDateTime}
                       onChange={(_, event) => formikProps.handleChange(event)}
                       hasError={
@@ -95,53 +95,16 @@ const CredentialForm: FC = () => {
                       }
                       onBlur={formikProps.handleBlur}
                     />
-                    <S.InputWrapper
-                      label='End date & time'
-                      name='eventEndDateTime'
-                      type='datetime-local'
-                      value={formikProps.values.eventEndDateTime}
-                      onChange={(_, event) => formikProps.handleChange(event)}
-                      hasError={
-                        formikProps.touched.eventEndDateTime
-                          ? Boolean(formikProps.errors.eventEndDateTime)
-                          : false
-                      }
-                      helpText={
-                        formikProps.touched.eventEndDateTime
-                          ? formikProps.errors.eventEndDateTime
-                          : ''
-                      }
-                      onBlur={formikProps.handleBlur}
-                    />
-                    <Textarea
-                      label='Event description'
-                      name='eventDescription'
-                      placeholder='Enter event description'
-                      maxLength={1000}
-                      value={formikProps.values.eventDescription}
-                      onChange={(value, e) => formikProps.handleChange(e)}
-                      hasError={
-                        formikProps.touched.eventDescription
-                          ? Boolean(formikProps.errors.eventDescription)
-                          : false
-                      }
-                      helpText={
-                        formikProps.touched.eventDescription
-                          ? formikProps.errors.eventDescription
-                          : ''
-                      }
-                      onBlur={formikProps.handleBlur}
-                    />
                   </div>
 
-                  <S.Heading variant='h6'>Ticket holder information</S.Heading>
+                  <S.Heading variant='h6'>Student information</S.Heading>
 
                   <div className='grid lg:grid-cols-2 lg:gap-x-8'>
                     <S.InputWrapper
-                      label='Ticket holder name'
+                      label='Student name'
                       name='name'
                       maxLength={100}
-                      placeholder='Enter ticket holder name'
+                      placeholder='Enter Student name'
                       value={formikProps.values.name}
                       onChange={(_, event) => formikProps.handleChange(event)}
                       hasError={
@@ -155,10 +118,10 @@ const CredentialForm: FC = () => {
                       onBlur={formikProps.handleBlur}
                     />
                     <S.InputWrapper
-                      label='Ticket holder email'
+                      label='Student email'
                       name='email'
                       type='email'
-                      placeholder='Enter ticket holder email'
+                      placeholder='Enter student email'
                       maxLength={100}
                       value={formikProps.values.email}
                       onChange={(_, event) => formikProps.handleChange(event)}
@@ -182,7 +145,7 @@ const CredentialForm: FC = () => {
                     disabled={!(formikProps.isValid && formikProps.dirty)}
                     loading={isCreating}
                   >
-                    Issue ticket
+                    Issue certificate
                   </S.ButtonWrapper>
                 </form>
               )}

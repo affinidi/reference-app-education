@@ -42,7 +42,7 @@ export const IconWrapper = styled.div`
   cursor: pointer;
 
   path {
-    fill: ${(props) => props.theme.colors.brand.primary['100']};
+    fill: ${(props) => props.theme.colors.neutral.secondary['100']};
   }
 `
 
