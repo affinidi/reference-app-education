@@ -7,10 +7,10 @@ export const DataCard = styled.div`
   background-color: ${(props) => props.theme.colors.neutral.secondary['100']};
   padding: 0 ${pxToRem(40)} ${pxToRem(40)} ${pxToRem(40)};
   width: 100%;
-`
 
-export const CertIconContainer = styled(Box)`
-  margin-bottom: ${pxToRem(24)};
+  svg {
+    margin-bottom: ${pxToRem(24)};
+  }
 `
 
 export const QrCodeCard = styled(Box)`

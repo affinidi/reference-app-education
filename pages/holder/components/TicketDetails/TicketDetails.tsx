@@ -1,7 +1,7 @@
-import CertIcon from 'assets/certIcon'
-import { Box, Typography } from 'components'
-
 import { FC } from 'react'
+
+import MortarBoardHatIcon from 'assets/mortarBoardHatIcon'
+import { Box, Typography } from 'components'
 
 import * as S from './TicketDetails.styled'
 
@@ -24,9 +24,7 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
     <S.DataCard>
       <Box justifyContent='space-between' gap={96}>
         <div className='grid grid-row-3'>
-          <S.CertIconContainer direction='row'>
-            <CertIcon />
-          </S.CertIconContainer>
+          <MortarBoardHatIcon />
 
           <S.Data variant='h5'>{eventName}</S.Data>
           <S.Data variant='s1'>{studentName}Lloyd</S.Data>
