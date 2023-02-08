@@ -27,7 +27,7 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
           <MortarBoardHatIcon />
 
           <S.Data variant='h5'>{eventName}</S.Data>
-          <S.Data variant='s1'>{studentName}Lloyd</S.Data>
+          <S.Data variant='s1'>{studentName}</S.Data>
         </div>
 
         <div className='grid grid-cols-2'>

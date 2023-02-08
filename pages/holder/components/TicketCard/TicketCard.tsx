@@ -34,8 +34,7 @@ const TicketCard: FC<TicketCardProps> = ({ credential, isValid }) => {
           </S.MortarBoardHatIconContainer>
 
           <Typography variant='h6'>{credential.title}</Typography>
-          <Typography variant='s2'>Location</Typography>
-          {/* <Typography variant='s2'>{credential.location}</Typography> */}
+          <Typography variant='s2'>{credential.location}</Typography>
         </Box>
 
         <Box direction='row' gap={8}>

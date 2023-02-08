@@ -38,7 +38,7 @@ const CredentialView: FC = () => {
   return (
     <>
       <Header
-        title={credential.credentialSubject.eventName || ''}
+        title='Certificate details'
         path={ROUTES.holder.home}
         hasBackIcon
       />
