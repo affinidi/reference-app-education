@@ -13,6 +13,15 @@ export const DataCard = styled.div`
   }
 `
 
+export const DataCardInnerContainer = styled(Box)`
+  gap: ${pxToRem(96)};
+
+  @media (max-width: 576px) {
+    gap: ${pxToRem(40)};
+    }
+  }
+`
+
 export const QrCodeCard = styled(Box)`
   background-color: ${(props) => props.theme.colors.brand.primary['100']};
   padding: ${pxToRem(40)};
@@ -31,6 +40,12 @@ export const QrCodeCard = styled(Box)`
       }
     }
   }
+
+  @media (max-width: 576px) {
+    background-color: ${(props) => props.theme.colors.brand.primary['90']};
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
 `
 
 export const Data = styled(Typography)`
@@ -48,5 +63,10 @@ export const TicketDetailsCard = styled(Box)`
     flex-direction: column-reverse;
     max-width: ${pxToRem(338)};
     margin: 0 auto;
+  }
+
+  @media (max-width: 576px) {
+    max-width: none;
+    margin: 0;
   }
 `

@@ -1,5 +1,5 @@
-import { Box, Button, Typography } from 'components'
 import styled from 'styled-components'
+import { Box, Button, Typography } from 'components'
 import { pxToRem } from 'utils'
 
 export const IconBox = styled(Box)`
@@ -7,6 +7,10 @@ export const IconBox = styled(Box)`
 `
 export const ScanButton = styled(Button)`
   width: 100%;
+
+  @media (max-width: 576px) {
+    margin-top: ${pxToRem(128)};
+  }
 `
 
 export const WelcomeMessage = styled(Typography)`

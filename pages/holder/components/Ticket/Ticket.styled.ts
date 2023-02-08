@@ -21,7 +21,7 @@ export const Ticket = styled(Box)<{ isValid: boolean }>`
     padding: 0 ${pxToRem(24)} ${pxToRem(24)} ${pxToRem(24)};
   }
 
-  // ${(props) => (props.isValid ? `opacity: 0.5; cursor: default;` : null)}
+  ${(props) => (props.isValid ? `opacity: 0.5; cursor: default;` : null)}
 `
 export const MortarBoardHatIconContainer = styled.div`
   margin-bottom: ${pxToRem(16)};

@@ -51,8 +51,8 @@ const getDetails = ({
       qrCode && (
         <TicketDetails
           eventName={detailsObject.eventName}
+          studentName={detailsObject.studentName}
           startDate={format(new Date(detailsObject.startDate), 'dd.MM.yyy')}
-          startTime={format(new Date(detailsObject.startDate), 'HH.mm')}
           location={detailsObject.place}
           qrCode={qrCode}
         />

@@ -7,9 +7,11 @@ import {
   useShareCredentialMutation,
 } from 'hooks/holder/useCredentials'
 import { ROUTES } from 'utils'
-import { Container, Header, Spinner } from 'components'
+import { Header, Spinner } from 'components'
 import { Credential } from '../../components/Credential/Credential'
 import { useAuthContext } from 'hooks/useAuthContext'
+
+import * as S from './credentialId.styled'
 
 const CredentialView: FC = () => {
   const { authState } = useAuthContext()
@@ -43,12 +45,12 @@ const CredentialView: FC = () => {
         hasBackIcon
       />
 
-      <Container>
+      <S.Container>
         <Credential
           credentialSubject={credential.credentialSubject}
           qrCode={shareCredentialData?.qrCode}
         />
-      </Container>
+      </S.Container>
     </>
   )
 }

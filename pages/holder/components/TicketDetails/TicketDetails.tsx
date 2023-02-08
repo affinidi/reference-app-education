@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
+import { Typography } from 'components'
 import MortarBoardHatIcon from 'assets/mortarBoardHatIcon'
-import { Box, Typography } from 'components'
 
 import * as S from './TicketDetails.styled'
 
@@ -22,15 +22,14 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
 }) => (
   <S.TicketDetailsCard>
     <S.DataCard>
-      <Box justifyContent='space-between' gap={96}>
-        <div className='grid grid-row-3'>
-          <MortarBoardHatIcon />
-
+      <MortarBoardHatIcon />
+      <S.DataCardInnerContainer justifyContent='space-between'>
+        <div className='grid grid-row-3 sm:grid-row-4'>
           <S.Data variant='h5'>{eventName}</S.Data>
           <S.Data variant='s1'>{studentName}</S.Data>
         </div>
 
-        <div className='grid grid-cols-2'>
+        <div className='grid sm:grid-cols-2 gap-y-7'>
           <div className='grid'>
             <Typography variant='p3'>Issuing institution</Typography>
             <S.Data variant='p4'>{location} </S.Data>
@@ -41,7 +40,7 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
             <S.Data variant='p4'>{startDate} </S.Data>
           </div>
         </div>
-      </Box>
+      </S.DataCardInnerContainer>
     </S.DataCard>
 
     <S.QrCodeCard>
