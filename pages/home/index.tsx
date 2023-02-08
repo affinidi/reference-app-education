@@ -1,8 +1,11 @@
 import { FC } from 'react'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 import { ROUTES } from 'utils'
-import { HolderFlowIcon, IssuerFlowIcon, VerifierFlowIcon } from 'assets'
+import HolderFlowIcon from '/public/images/holder-flow.svg'
+import VerifierFlowIcon from '/public/images/verifier-flow.svg'
+import IssuerFlowIcon from '/public/images/issuer-flow.svg'
 import { Container, Header } from 'components'
 
 import * as S from './home.styled'
@@ -32,7 +35,11 @@ export const Home: FC = () => {
               </S.Para>
             </S.Details>
             <S.Icon>
-              <HolderFlowIcon />
+              <Image
+                src={HolderFlowIcon}
+                alt='Holder Flow Icon'
+                aria-label='holder-flow'
+              />
             </S.Icon>
           </S.Card>
 
@@ -52,7 +59,11 @@ export const Home: FC = () => {
               </S.Para>
             </S.Details>
             <S.Icon>
-              <VerifierFlowIcon />
+              <Image
+                src={VerifierFlowIcon}
+                alt='Verifier Flow Icon'
+                aria-label='verifier-flow'
+              />
             </S.Icon>
           </S.Card>
 
@@ -72,7 +83,11 @@ export const Home: FC = () => {
               </S.Para>
             </S.Details>
             <S.Icon>
-              <IssuerFlowIcon />
+              <Image
+                src={IssuerFlowIcon}
+                alt='Issuer Flow Icon'
+                aria-label='issuer-flow'
+              />
             </S.Icon>
           </S.Card>
         </S.Wrapper>

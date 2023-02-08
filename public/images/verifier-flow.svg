@@ -1,13 +1,9 @@
-import { SVGAttributes } from 'react'
-
-export default (props: SVGAttributes<SVGElement>) => (
-  <svg
+<svg
     width='48'
     height='48'
     viewBox='0 0 48 48'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
-    {...props}
   >
     <path
       d='M1.6 9.6A1.6 1.6 0 0 0 3.2 8V3.2H8A1.6 1.6 0 1 0 8 0H3.2A3.201 3.201 0 0 0 0 3.2V8a1.6 1.6 0 0 0 1.6 1.6zM44.8 0H40a1.6 1.6 0 1 0 0 3.2h4.8V8A1.6 1.6 0 1 0 48 8V3.2A3.201 3.201 0 0 0 44.8 0zM8 44.8H3.2V40A1.6 1.6 0 1 0 0 40v4.8A3.201 3.201 0 0 0 3.2 48H8a1.6 1.6 0 1 0 0-3.2zM46.4 38.4a1.6 1.6 0 0 0-1.6 1.6v4.8H40a1.6 1.6 0 1 0 0 3.2h4.8a3.201 3.201 0 0 0 3.2-3.2V40a1.6 1.6 0 0 0-1.6-1.6z'
@@ -18,4 +14,3 @@ export default (props: SVGAttributes<SVGElement>) => (
       fill='#3F2F59'
     />
   </svg>
-)

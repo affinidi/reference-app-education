@@ -1,11 +1,14 @@
 import { FC } from 'react'
+import Image from 'next/image'
 
 import { Typography, Modal } from 'components'
 
 import { useNavBar } from './useNavBar'
+import Logo from 'public/images/logo.svg'
+import CloseIcon from 'public/images/icon-close.svg'
+import MenuIcon from 'public/images/icon-menu.svg'
+
 import * as S from './NavBar.styled'
-import StudId from 'assets/studId'
-import { CloseMenuIcon, MenuIcon } from 'assets'
 
 const NavBar: FC = () => {
   const {
@@ -24,21 +27,30 @@ const NavBar: FC = () => {
         direction='row'
       >
         <S.Logo>
-          <StudId onClick={handleGoHomePage} aria-label='app-logo' />
+          <Image
+            onClick={handleGoHomePage}
+            src={Logo}
+            alt='StudId'
+            aria-label='app-logo'
+          />
         </S.Logo>
 
         {isAuthorized && (
           <>
             {isMenuOpen ? (
               <S.IconWrapper>
-                <CloseMenuIcon
+                <Image
+                  src={CloseIcon}
+                  alt='Close menu'
                   onClick={() => setIsMenuOpen(false)}
                   aria-label='menu-close-icon'
                 />
               </S.IconWrapper>
             ) : (
               <S.IconWrapper>
-                <MenuIcon
+                <Image
+                  src={MenuIcon}
+                  alt='Open menu'
                   onClick={() => setIsMenuOpen(true)}
                   aria-label='menu-open-icon'
                 />

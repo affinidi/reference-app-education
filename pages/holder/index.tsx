@@ -1,15 +1,16 @@
 import { FC } from 'react'
+import Image from 'next/image'
 import { format } from 'date-fns'
 import { StoredW3CCredential } from 'services/cloud-wallet/cloud-wallet.api'
 import { useCredentialsQuery } from 'hooks/holder/useCredentials'
+import { useAuthContext } from 'hooks/useAuthContext'
 import { Credential } from './types'
 
-import { JSON_SCHEMA_URL } from 'utils'
-import { useAuthContext } from 'hooks/useAuthContext'
-import NoTicket from 'assets/noTicket'
 import { Container, Header, Spinner, Typography } from 'components'
-
 import TicketCard from './components/TicketCard/TicketCard'
+import NoTicket from '/public/images/no-ticket.svg'
+import { JSON_SCHEMA_URL } from 'utils'
+
 import * as S from './index.styled'
 
 const Home: FC = () => {
@@ -57,7 +58,7 @@ const Home: FC = () => {
         <Container>
           <div className='grid justify-content-center'>
             <S.IconContainer>
-              <NoTicket />
+              <Image src={NoTicket} alt='No Ticket' aria-label='no-ticket' />
             </S.IconContainer>
             <Typography align='center' variant='p2'>
               You don’t have any certificates yet.{' '}

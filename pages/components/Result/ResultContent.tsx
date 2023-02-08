@@ -1,6 +1,9 @@
 import { FC } from 'react'
+import Image from 'next/image'
 
-import { InvalidCredential, IssuedIcon, ValidCredential } from 'assets'
+import IssuedIcon from '/public/images/issued-icon.svg'
+import ValidCredential from '/public/images/valid-credential.svg'
+import InvalidCredential from '/public/images/invalid-credential.svg'
 
 import * as S from './Result.styled'
 
@@ -16,12 +19,20 @@ export const ResultContent: FC<ResultContentProps> = ({
     <S.ImgWrapper>
       {isValid ? (
         isIssuance ? (
-          <IssuedIcon />
+          <Image src={IssuedIcon} alt='Issued Icon' aria-label='issued-icon' />
         ) : (
-          <ValidCredential />
+          <Image
+            src={ValidCredential}
+            alt='Valid Credential'
+            aria-label='valid-credential'
+          />
         )
       ) : (
-        <InvalidCredential />
+        <Image
+          src={InvalidCredential}
+          alt='Invalid Credential'
+          aria-label='invalid-credential'
+        />
       )}
     </S.ImgWrapper>
 

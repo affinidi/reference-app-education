@@ -40,10 +40,6 @@ export const Logo = styled.div`
 
 export const IconWrapper = styled.div`
   cursor: pointer;
-
-  path {
-    fill: ${(props) => props.theme.colors.neutral.secondary['100']};
-  }
 `
 
 export const Content = styled(Box)`

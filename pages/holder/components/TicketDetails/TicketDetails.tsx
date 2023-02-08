@@ -1,7 +1,8 @@
 import { FC } from 'react'
+import Image from 'next/image'
 
 import { Typography } from 'components'
-import MortarBoardHatIcon from 'assets/mortarBoardHatIcon'
+import mortarBoard from '/public/images/mortar-board.svg'
 
 import * as S from './TicketDetails.styled'
 
@@ -22,7 +23,12 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
 }) => (
   <S.TicketDetailsCard>
     <S.DataCard>
-      <MortarBoardHatIcon />
+      <Image
+        src={mortarBoard}
+        alt='Mortar Board Hat Icon'
+        aria-label='mortar-board'
+      />
+
       <S.DataCardInnerContainer justifyContent='space-between'>
         <div className='grid grid-row-3 sm:grid-row-4'>
           <S.Data variant='h5'>{eventName}</S.Data>
