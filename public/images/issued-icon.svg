@@ -407,10 +407,10 @@
       stroke-linecap='round'
       stroke-linejoin='round'
     />
-    <g clip-path='url(#9ep5q6q36a)'>
+    <g clipPath='url(#9ep5q6q36a)'>
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='m114.441 110.278-8.535-9.963-2.906 3.369 11.441 13.355L139 88.369 136.114 85l-21.673 25.278z'
         fill='#fff'
       />
