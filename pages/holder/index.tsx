@@ -45,13 +45,13 @@ const Home: FC = () => {
     )
   }
 
-  const tickets = data.filter((credentialItem) => {
+  const certs = data.filter((credentialItem) => {
     const credentialSchema = (credentialItem as StoredW3CCredential)
       .credentialSchema
     return credentialSchema?.id === JSON_SCHEMA_URL
   })
 
-  if (tickets.length === 0) {
+  if (certs.length === 0) {
     return (
       <>
         <Header title='Your certificates' />
@@ -74,31 +74,27 @@ const Home: FC = () => {
   }
 
   // @ts-ignore
-  const validTickets: StoredW3CCredential[] = tickets.filter(
-    (credentialItem) => {
-      const credentialSubject = (credentialItem as StoredW3CCredential)
-        ?.credentialSubject
-      return Date.parse(credentialSubject?.dateOfCompletion) >= Date.now()
-    }
-  )
+  const validCerts: StoredW3CCredential[] = certs.filter((credentialItem) => {
+    const credentialSubject = (credentialItem as StoredW3CCredential)
+      ?.credentialSubject
+    return Date.parse(credentialSubject?.dateOfCompletion) >= Date.now()
+  })
 
   // @ts-ignore
-  const expiredTickets: StoredW3CCredential[] = tickets.filter(
-    (credentialItem) => {
-      const credentialSubject = (credentialItem as StoredW3CCredential)
-        ?.credentialSubject
-      return Date.parse(credentialSubject?.dateOfCompletion) < Date.now()
-    }
-  )
+  const expiredCerts: StoredW3CCredential[] = certs.filter((credentialItem) => {
+    const credentialSubject = (credentialItem as StoredW3CCredential)
+      ?.credentialSubject
+    return Date.parse(credentialSubject?.dateOfCompletion) < Date.now()
+  })
 
-  const getTicketCards = ({
-    tickets,
+  const getCertCards = ({
+    certs,
     isValid,
   }: {
-    tickets: StoredW3CCredential[]
+    certs: StoredW3CCredential[]
     isValid: boolean
   }) =>
-    tickets.map((credentialItem: StoredW3CCredential) => {
+    certs.map((credentialItem: StoredW3CCredential) => {
       const credential: Credential = {
         title: credentialItem?.credentialSubject?.courseTitle,
         date: format(
@@ -122,20 +118,20 @@ const Home: FC = () => {
     <>
       <Header title='Your certificates' />
 
-      {validTickets.length > 0 && (
+      {validCerts.length > 0 && (
         <Container>
           <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-12 lg:gap-16'>
-            {getTicketCards({ tickets: validTickets, isValid: true })}
+            {getCertCards({ certs: validCerts, isValid: true })}
           </div>
         </Container>
       )}
 
-      {expiredTickets.length > 0 && (
+      {expiredCerts.length > 0 && (
         <Container>
           <S.SubTitle variant='h6'>Expired tickets</S.SubTitle>
 
           <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-12 lg:gap-16'>
-            {getTicketCards({ tickets: expiredTickets, isValid: false })}
+            {getCertCards({ certs: expiredCerts, isValid: false })}
           </div>
         </Container>
       )}
