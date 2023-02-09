@@ -7,8 +7,8 @@ import { useAuthContext } from 'hooks/useAuthContext'
 import { Credential } from './types'
 
 import { Container, Header, Spinner, Typography } from 'components'
-import TicketCard from './components/TicketCard/TicketCard'
-import NoTicket from '/public/images/no-ticket.svg'
+import EducationCertificate from './components/educationCertificate/educationCertificate'
+import NoData from 'public/images/no-tickets.svg'
 import { JSON_SCHEMA_URL } from 'utils'
 
 import * as S from './index.styled'
@@ -58,7 +58,11 @@ const Home: FC = () => {
         <Container>
           <div className='grid justify-content-center'>
             <S.IconContainer>
-              <Image src={NoTicket} alt='No Ticket' aria-label='no-ticket' />
+              <Image
+                src={NoData}
+                alt='Illustration to show that there is no avilable certificates'
+                aria-label='no-ticket'
+              />
             </S.IconContainer>
             <Typography align='center' variant='p2'>
               You don’t have any certificates yet.{' '}
@@ -109,7 +113,7 @@ const Home: FC = () => {
       }
 
       return (
-        <TicketCard
+        <EducationCertificate
           key={credentialItem.id}
           credential={credential}
           isValid={isValid}

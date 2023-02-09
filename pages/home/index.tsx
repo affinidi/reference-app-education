@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import { ROUTES } from 'utils'
-import HolderFlowIcon from '/public/images/holder-flow.svg'
-import VerifierFlowIcon from '/public/images/verifier-flow.svg'
-import IssuerFlowIcon from '/public/images/issuer-flow.svg'
+import HolderFlowIcon from 'public/images/holder-flow.svg'
+import VerifierFlowIcon from 'public/images/verifier-flow.svg'
+import IssuerFlowIcon from 'public/images/issuer-flow.svg'
 import { Container, Header } from 'components'
 
 import * as S from './home.styled'

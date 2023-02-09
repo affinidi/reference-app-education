@@ -2,11 +2,11 @@ import { FC } from 'react'
 import Image from 'next/image'
 
 import { Typography } from 'components'
-import mortarBoard from '/public/images/mortar-board.svg'
+import mortarBoard from 'public/images/mortar-board.svg'
 
-import * as S from './TicketDetails.styled'
+import * as S from './certificatetDetails.styled'
 
-export type TicketDetailsProps = {
+export type EducationCertDetailsProps = {
   eventName: string
   studentName: string
   startDate: string
@@ -14,7 +14,7 @@ export type TicketDetailsProps = {
   location: string
 }
 
-export const TicketDetails: FC<TicketDetailsProps> = ({
+export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
   eventName,
   studentName,
   startDate,
@@ -25,7 +25,7 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
     <S.DataCard>
       <Image
         src={mortarBoard}
-        alt='Mortar Board Hat Icon'
+        alt='Mortar Board Hat Icon that shows on top of ticket'
         aria-label='mortar-board'
       />
 
@@ -55,4 +55,4 @@ export const TicketDetails: FC<TicketDetailsProps> = ({
   </S.TicketDetailsCard>
 )
 
-export default TicketDetails
+export default EducationCertDetails

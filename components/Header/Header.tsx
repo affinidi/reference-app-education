@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-import BackIcon from '/public/images/back-icon.svg'
+import BackIcon from 'public/images/back-icon.svg'
 
 import * as S from './Header.styled'
 
@@ -23,7 +23,11 @@ const Header: FC<HeaderProps> = ({ title, hasBackIcon, path }) => {
             path ? navigate.push(path) : hasBackIcon ? navigate.back() : null
           }
         >
-          <Image src={BackIcon} alt='backIcon' aria-label='back-icon' />
+          <Image
+            src={BackIcon}
+            alt='Icon used to go back a page'
+            aria-label='back-icon'
+          />
         </S.IconWrapper>
       )}
 

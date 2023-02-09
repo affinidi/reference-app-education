@@ -1,11 +1,12 @@
 import React from 'react'
-
-import { LoadingIcon } from 'assets'
+import Image from 'next/image'
 
 import { ButtonColor, ButtonSize, ButtonVariant } from './Button.themes'
 import * as S from './Button.styled'
+import LoadingIcon from 'public/images/loading.svg'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: ButtonColor
   variant?: ButtonVariant
   size?: ButtonSize
@@ -40,14 +41,18 @@ const Button: React.FC<ButtonProps> = ({
   >
     {loading && (
       <S.SpinnerWrapper>
-        <LoadingIcon />
+        <Image
+          src={LoadingIcon}
+          alt='Loading Icon spinning'
+          aria-label='loading'
+        />
       </S.SpinnerWrapper>
     )}
 
     {icon && <S.IconWrapper $loading={loading}>{icon}</S.IconWrapper>}
 
     {children && (
-      <S.Content variant="b2" $loading={loading} $iconButton={iconButton}>
+      <S.Content variant='b2' $loading={loading} $iconButton={iconButton}>
         {children}
       </S.Content>
     )}
