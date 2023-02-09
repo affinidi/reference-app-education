@@ -45,13 +45,13 @@ const Home: FC = () => {
     )
   }
 
-  const certs = data.filter((credentialItem) => {
+  const vcs = data.filter((credentialItem) => {
     const credentialSchema = (credentialItem as StoredW3CCredential)
       .credentialSchema
     return credentialSchema?.id === JSON_SCHEMA_URL
   })
 
-  if (certs.length === 0) {
+  if (vcs.length === 0) {
     return (
       <>
         <Header title='Your certificates' />
@@ -74,27 +74,27 @@ const Home: FC = () => {
   }
 
   // @ts-ignore
-  const validCerts: StoredW3CCredential[] = certs.filter((credentialItem) => {
+  const validVcs: StoredW3CCredential[] = vcs.filter((credentialItem) => {
     const credentialSubject = (credentialItem as StoredW3CCredential)
       ?.credentialSubject
     return Date.parse(credentialSubject?.dateOfCompletion) >= Date.now()
   })
 
   // @ts-ignore
-  const expiredCerts: StoredW3CCredential[] = certs.filter((credentialItem) => {
+  const expiredVcs: StoredW3CCredential[] = vcs.filter((credentialItem) => {
     const credentialSubject = (credentialItem as StoredW3CCredential)
       ?.credentialSubject
     return Date.parse(credentialSubject?.dateOfCompletion) < Date.now()
   })
 
-  const getCertCards = ({
-    certs,
+  const getVcCards = ({
+    vcs,
     isValid,
   }: {
-    certs: StoredW3CCredential[]
+    vcs: StoredW3CCredential[]
     isValid: boolean
   }) =>
-    certs.map((credentialItem: StoredW3CCredential) => {
+    vcs.map((credentialItem: StoredW3CCredential) => {
       const credential: Credential = {
         title: credentialItem?.credentialSubject?.courseTitle,
         date: format(
@@ -118,20 +118,20 @@ const Home: FC = () => {
     <>
       <Header title='Your certificates' />
 
-      {validCerts.length > 0 && (
+      {validVcs.length > 0 && (
         <Container>
           <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-12 lg:gap-16'>
-            {getCertCards({ certs: validCerts, isValid: true })}
+            {getVcCards({ vcs: validVcs, isValid: true })}
           </div>
         </Container>
       )}
 
-      {expiredCerts.length > 0 && (
+      {expiredVcs.length > 0 && (
         <Container>
           <S.SubTitle variant='h6'>Expired tickets</S.SubTitle>
 
           <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-12 lg:gap-16'>
-            {getCertCards({ certs: expiredCerts, isValid: false })}
+            {getVcCards({ vcs: expiredVcs, isValid: false })}
           </div>
         </Container>
       )}
