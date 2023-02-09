@@ -64,7 +64,7 @@ const Home: FC = () => {
                 aria-label='no-ticket'
               />
             </S.IconContainer>
-            <Typography align='center' variant='p2'>
+            <Typography align='center' variant='p1'>
               You don’t have any certificates yet.{' '}
             </Typography>
           </div>
@@ -78,7 +78,7 @@ const Home: FC = () => {
     (credentialItem) => {
       const credentialSubject = (credentialItem as StoredW3CCredential)
         ?.credentialSubject
-      return Date.parse(credentialSubject?.startDate) >= Date.now()
+      return Date.parse(credentialSubject?.dateOfCompletion) >= Date.now()
     }
   )
 
@@ -87,7 +87,7 @@ const Home: FC = () => {
     (credentialItem) => {
       const credentialSubject = (credentialItem as StoredW3CCredential)
         ?.credentialSubject
-      return Date.parse(credentialSubject?.startDate) < Date.now()
+      return Date.parse(credentialSubject?.dateOfCompletion) < Date.now()
     }
   )
 
@@ -100,15 +100,12 @@ const Home: FC = () => {
   }) =>
     tickets.map((credentialItem: StoredW3CCredential) => {
       const credential: Credential = {
-        title: credentialItem?.credentialSubject?.eventName,
+        title: credentialItem?.credentialSubject?.courseTitle,
         date: format(
-          new Date(credentialItem?.credentialSubject?.startDate),
+          new Date(credentialItem?.credentialSubject?.dateOfCompletion),
           'dd.MM.yyyy'
         ),
-        time: format(
-          new Date(credentialItem?.credentialSubject?.startDate),
-          'HH:mm'
-        ),
+        institution: credentialItem?.credentialSubject?.institution,
         credentialId: credentialItem?.id,
       }
 
