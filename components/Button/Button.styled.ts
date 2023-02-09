@@ -40,7 +40,7 @@ export const SpinnerWrapper = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
 
-  svg {
+  img {
     display: block;
     animation: ${rotate} 1.5s linear infinite;
   }
@@ -63,8 +63,10 @@ export const Button = styled.button<StyledButtonProps>`
   align-items: center;
   justify-content: center;
   padding: ${(props) => getPadding(props.$size, props.$hasIcon)};
-  background-color: ${(props) => getBackgroundColor(props.$variant, props.$color, 'default')};
-  border: 2px solid ${(props) => getBorder(props.$variant, props.$color, 'default')};
+  background-color: ${(props) =>
+    getBackgroundColor(props.$variant, props.$color, 'default')};
+  border: 2px solid
+    ${(props) => getBorder(props.$variant, props.$color, 'default')};
   border-radius: 48px;
   box-sizing: border-box;
   color: ${(props) => getColor(props.$variant, props.$color, 'default')};
@@ -82,8 +84,10 @@ export const Button = styled.button<StyledButtonProps>`
 
   &._hover,
   &:hover {
-    background-color: ${(props) => getBackgroundColor(props.$variant, props.$color, 'hover')};
-    border-color: ${(props) => getBorder(props.$variant, props.$color, 'hover')};
+    background-color: ${(props) =>
+      getBackgroundColor(props.$variant, props.$color, 'hover')};
+    border-color: ${(props) =>
+      getBorder(props.$variant, props.$color, 'hover')};
     color: ${(props) => getColor(props.$variant, props.$color, 'hover')};
 
     path {
@@ -93,8 +97,10 @@ export const Button = styled.button<StyledButtonProps>`
 
   &._active,
   &:active {
-    background-color: ${(props) => getBackgroundColor(props.$variant, props.$color, 'active')};
-    border-color: ${(props) => getBorder(props.$variant, props.$color, 'active')};
+    background-color: ${(props) =>
+      getBackgroundColor(props.$variant, props.$color, 'active')};
+    border-color: ${(props) =>
+      getBorder(props.$variant, props.$color, 'active')};
     color: ${(props) => getColor(props.$variant, props.$color, 'active')};
 
     path {
@@ -103,8 +109,10 @@ export const Button = styled.button<StyledButtonProps>`
   }
 
   &[disabled] {
-    background-color: ${(props) => getBackgroundColor(props.$variant, props.$color, 'disabled')};
-    border-color: ${(props) => getBorder(props.$variant, props.$color, 'disabled')};
+    background-color: ${(props) =>
+      getBackgroundColor(props.$variant, props.$color, 'disabled')};
+    border-color: ${(props) =>
+      getBorder(props.$variant, props.$color, 'disabled')};
     color: ${(props) => getColor(props.$variant, props.$color, 'disabled')};
     cursor: not-allowed;
 
@@ -123,7 +131,11 @@ export const Button = styled.button<StyledButtonProps>`
   ${(props) =>
     props.$loading &&
     css`
-      background-color: ${getBackgroundColor(props.$variant, props.$color, 'loading')};
+      background-color: ${getBackgroundColor(
+        props.$variant,
+        props.$color,
+        'loading'
+      )};
       border-color: ${getBorder(props.$variant, props.$color, 'loading')};
       color: ${getColor(props.$variant, props.$color, 'loading')};
       pointer-events: none;
@@ -134,7 +146,9 @@ export const Button = styled.button<StyledButtonProps>`
     `}
 `
 
-export const Content = styled(Typography)<Pick<StyledButtonProps, '$loading' | '$iconButton'>>`
+export const Content = styled(Typography)<
+  Pick<StyledButtonProps, '$loading' | '$iconButton'>
+>`
   opacity: ${(props) => (props.$loading ? '0' : '1')};
   color: inherit;
   cursor: inherit;
