@@ -16,7 +16,7 @@ export const Ticket = styled(Box)`
     cursor: pointer;
   }
 
-  @media (min-width: ${pxToRem(1024)}) {
+  @media (min-width: 1024px) {
     width: auto;
     padding: 0 ${pxToRem(24)} ${pxToRem(24)} ${pxToRem(24)};
   }
