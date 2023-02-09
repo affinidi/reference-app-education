@@ -50,7 +50,7 @@ const NavBar: FC = () => {
               <S.IconWrapper>
                 <Image
                   src={MenuIcon}
-                  alt='hambuger menu icon used to open modal'
+                  alt='Open Menu'
                   onClick={() => setIsMenuOpen(true)}
                   aria-label='menu-open-icon'
                 />

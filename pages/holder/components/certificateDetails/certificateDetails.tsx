@@ -23,11 +23,7 @@ export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
 }) => (
   <S.TicketDetailsCard>
     <S.DataCard>
-      <Image
-        src={mortarBoard}
-        alt='Mortar Board Hat Icon that shows on top of ticket'
-        aria-label='mortar-board'
-      />
+      <Image src={mortarBoard} alt='Mortar Board' aria-label='mortar-board' />
 
       <S.DataCardInnerContainer justifyContent='space-between'>
         <div className='grid grid-row-3 sm:grid-row-4'>

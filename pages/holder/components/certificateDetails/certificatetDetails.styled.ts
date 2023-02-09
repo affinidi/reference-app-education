@@ -35,7 +35,7 @@ export const QrCodeCard = styled(Box)`
       max-width: none;
 
       img {
-        height: ${pxToRem(292)};
+        max-width: none;
         width: ${pxToRem(292)};
       }
     }
@@ -43,8 +43,8 @@ export const QrCodeCard = styled(Box)`
 
   @media (max-width: 576px) {
     background-color: ${(props) => props.theme.colors.brand.primary['90']};
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 `
 
