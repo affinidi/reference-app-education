@@ -28,7 +28,6 @@ export const Container = styled(Box)`
 export const Title = styled(Typography)`
   padding-bottom: ${pxToRem(20)};
   color: ${(props) => props.theme.colors.neutral.secondary['100']};
-
   @media (max-width: 1024px) {
     padding-bottom: ${pxToRem(24)};
   }

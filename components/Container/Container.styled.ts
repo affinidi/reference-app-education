@@ -6,7 +6,7 @@ import Typography from '../Typography/Typography'
 export const Container = styled.div`
   padding: 0 ${pxToRem(100)};
 
-  @media (max-width: ${pxToRem(1024)}) {
+  @media (max-width: ${pxToRem(576)}) {
     padding: 0 ${pxToRem(24)};
   }
 `

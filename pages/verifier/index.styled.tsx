@@ -8,6 +8,10 @@ export const IconBox = styled(Box)`
 export const ScanButton = styled(Button)`
   width: 100%;
 
+  @media (min-width: 1024px) {
+    margin-top: ${pxToRem(48)};
+  }
+
   @media (max-width: 576px) {
     margin-top: ${pxToRem(128)};
   }

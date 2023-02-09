@@ -100,7 +100,15 @@ export const Typography = styled.p<{
       case 'p7':
       case 'p8':
       case 'e1':
+      case 's1':
+      case 's2':
         return "'Nunito Sans', sans-serif"
+      case 'h4':
+      case 'h5':
+      case 'h6':
+      case 'b2':
+      case 'l3':
+        return "'Poppins', sans serif"
 
       default:
         return "'Montserrat', sans-serif"
