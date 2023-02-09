@@ -30,7 +30,7 @@ const NavBar: FC = () => {
           <Image
             onClick={handleGoHomePage}
             src={Logo}
-            alt='StudId logo in navbar'
+            alt='StudId'
             aria-label='app-logo'
           />
         </S.Logo>
@@ -41,7 +41,7 @@ const NavBar: FC = () => {
               <S.IconWrapper>
                 <Image
                   src={CloseIcon}
-                  alt='Icon to close modal'
+                  alt='Close modal'
                   onClick={() => setIsMenuOpen(false)}
                   aria-label='menu-close-icon'
                 />

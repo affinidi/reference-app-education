@@ -91,18 +91,6 @@ export const Typography = styled.p<{
 
   font-family: ${(props) => {
     switch (props.$variant) {
-      case 'p1':
-      case 'p2':
-      case 'p3':
-      case 'p4':
-      case 'p5':
-      case 'p6':
-      case 'p7':
-      case 'p8':
-      case 'e1':
-      case 's1':
-      case 's2':
-        return "'Nunito Sans', sans-serif"
       case 'h4':
       case 'h5':
       case 'h6':
@@ -111,7 +99,7 @@ export const Typography = styled.p<{
         return "'Poppins', sans serif"
 
       default:
-        return "'Montserrat', sans-serif"
+        return "'Nunito Sans', sans-serif"
     }
   }};
 

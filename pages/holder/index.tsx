@@ -60,7 +60,7 @@ const Home: FC = () => {
             <S.IconContainer>
               <Image
                 src={NoData}
-                alt='Illustration to show that there is no avilable certificates'
+                alt='No avilable certificates'
                 aria-label='no-ticket'
               />
             </S.IconContainer>

@@ -21,20 +21,20 @@ export const ResultContent: FC<ResultContentProps> = ({
         isIssuance ? (
           <Image
             src={IssuedIcon}
-            alt='Illustration to show that certificate has been issued'
+            alt='Certificate Issued'
             aria-label='issued-icon'
           />
         ) : (
           <Image
             src={ValidCredential}
-            alt='Illustration to show that certificate is valid'
+            alt='Valid certificate'
             aria-label='valid-credential'
           />
         )
       ) : (
         <Image
           src={InvalidCredential}
-          alt='Illustration to show that certificate is invalid'
+          alt='Invalid certificate'
           aria-label='invalid-credential'
         />
       )}
