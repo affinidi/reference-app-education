@@ -28,7 +28,7 @@ const EducationCertificate: FC<EducationCertProps> = ({
   }
 
   return (
-    <S.Ticket onClick={handleClick}>
+    <S.Certificate onClick={handleClick}>
       <Box gap={32}>
         <Box>
           <S.MortarBoardHatIconContainer>
@@ -52,7 +52,7 @@ const EducationCertificate: FC<EducationCertProps> = ({
           <Typography variant='s2'>{credential.date}</Typography>
         </Box>
       </Box>
-    </S.Ticket>
+    </S.Certificate>
   )
 }
 

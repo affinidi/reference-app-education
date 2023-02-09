@@ -21,7 +21,7 @@ export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
   location,
   qrCode,
 }) => (
-  <S.TicketDetailsCard>
+  <S.EducationDetailsCard>
     <S.DataCard>
       <Image src={mortarBoard} alt='Mortar Board' aria-label='mortar-board' />
 
@@ -48,7 +48,7 @@ export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
     <S.QrCodeCard>
       <img src={qrCode} alt='QR Code' />
     </S.QrCodeCard>
-  </S.TicketDetailsCard>
+  </S.EducationDetailsCard>
 )
 
 export default EducationCertDetails

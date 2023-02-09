@@ -18,7 +18,6 @@ export const DataCardInnerContainer = styled(Box)`
 
   @media (max-width: 576px) {
     gap: ${pxToRem(40)};
-    }
   }
 `
 
@@ -33,11 +32,7 @@ export const QrCodeCard = styled(Box)`
 
     @media (min-width: 1024px) {
       max-width: none;
-
-      img {
-        max-width: none;
-        width: ${pxToRem(292)};
-      }
+      height: ${pxToRem(292)};
     }
   }
 
@@ -52,7 +47,7 @@ export const Data = styled(Typography)`
   color: ${(props) => props.theme.colors.neutral.primary['100']};
 `
 
-export const TicketDetailsCard = styled(Box)`
+export const EducationDetailsCard = styled(Box)`
   margin-top: ${pxToRem(48)};
   flex-direction: row;
   box-shadow: 0 ${pxToRem(4)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.1);
