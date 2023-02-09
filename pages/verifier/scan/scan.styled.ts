@@ -14,3 +14,8 @@ export const ScannerText = styled(Typography)`
     z-index: 200;
   } ;
 `
+export const Title = styled(Typography)`
+  display: flex;
+  justify-content: center;
+  margin: ${pxToRem(48)} 0;
+`

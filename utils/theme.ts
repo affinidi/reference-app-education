@@ -27,27 +27,27 @@ type BrandColors = {
 }
 
 const primaryBrand: BrandColors = {
-  100: '#060f5f',
-  90: '#1f276f',
-  70: '#51578f',
-  50: '#8287af',
-  30: '#b4b7cf',
-  15: '#dadbe7',
-  5: '#f3f3f7',
-  3: '#f8f8fa',
+  100: '#3f2f59',
+  90: '#52446a',
+  70: '#796d8b',
+  50: '#9f97ac',
+  30: '#c5c1cd',
+  15: '#c1c4cc',
+  5: '#f5f5f7',
+  3: '#ffffff',
   1: '#fdfdfd',
 }
 
 const secondaryBrand: BrandColors = {
-  100: '#279af1',
-  90: '#3da4f2',
-  70: '#68b8f5',
-  50: '#93ccf8',
-  30: '#bee1fb',
-  15: '#dff0fd',
-  5: '#f4fafe',
-  3: '#f9fcff',
-  1: '#fdfeff',
+  100: '#ff7b7b',
+  90: '#ff8888',
+  70: '#ffa3a3',
+  50: '#ffbdbd',
+  30: '#ffebeb',
+  15: '#ffebeb',
+  5: '#fff8f8',
+  3: '#fffbfb',
+  1: '#fffefe',
 }
 
 type NeutralColors = {

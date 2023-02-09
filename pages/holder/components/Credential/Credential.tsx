@@ -2,7 +2,9 @@ import { FC } from 'react'
 import { AnyData } from 'services/cloud-wallet/cloud-wallet.api'
 import { format } from 'date-fns'
 
-import { TicketDetails } from '../TicketDetails/TicketDetails'
+import EducationCertDetails, {
+  TicketDetails,
+} from '../certificateDetails/certificateDetails'
 
 import * as S from './Credential.styled'
 
@@ -38,7 +40,9 @@ const getDetails = ({
     return (
       <S.Div nested={nested}>
         {detailsObject.map((value, index) => (
-          <S.Div key={index}>{getDetails({ detailsObject: value, nested: true })}</S.Div>
+          <S.Div key={index}>
+            {getDetails({ detailsObject: value, nested: true })}
+          </S.Div>
         ))}
       </S.Div>
     )
@@ -47,12 +51,10 @@ const getDetails = ({
   if (typeof detailsObject === 'object' && detailsObject !== null) {
     return (
       qrCode && (
-        <TicketDetails
+        <EducationCertDetails
           eventName={detailsObject.eventName}
+          studentName={detailsObject.studentName}
           startDate={format(new Date(detailsObject.startDate), 'dd.MM.yyy')}
-          endDate={format(new Date(detailsObject.endDate), 'dd.MM.yyy')}
-          startTime={format(new Date(detailsObject.startDate), 'HH.mm')}
-          endTime={format(new Date(detailsObject.endDate), 'HH.mm')}
           location={detailsObject.place}
           qrCode={qrCode}
         />
@@ -63,6 +65,9 @@ const getDetails = ({
   return <S.Div>{renderLiteral(detailsObject)}</S.Div>
 }
 
-export const Credential: FC<CredentialProps> = ({ credentialSubject, qrCode }) => {
+export const Credential: FC<CredentialProps> = ({
+  credentialSubject,
+  qrCode,
+}) => {
   return <>{getDetails({ detailsObject: credentialSubject, qrCode })}</>
 }

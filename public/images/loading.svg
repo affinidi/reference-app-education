@@ -1,14 +1,9 @@
-import { SVGAttributes } from "react";
-
-// eslint-disable-next-line react/display-name,import/no-anonymous-default-export
-export default (props: SVGAttributes<SVGElement>) => (
-  <svg
+<svg
     width="20"
     height="20"
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
   >
     <path
       fillRule="evenodd"
@@ -17,4 +12,3 @@ export default (props: SVGAttributes<SVGElement>) => (
       fill="#fff"
     />
   </svg>
-);

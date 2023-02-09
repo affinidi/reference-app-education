@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 
 export const Card = styled(Box)<{ $disabled?: boolean }>`
   padding: ${pxToRem(24)};
-  margin-top: ${pxToRem(40)};
   min-height: initial;
   border-radius: 8px;
   box-shadow: 0 ${pxToRem(4)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.1);
@@ -21,7 +20,7 @@ export const Card = styled(Box)<{ $disabled?: boolean }>`
     cursor: pointer;
   }
 
-  @media (min-width: ${pxToRem(500)}) {
+  @media (min-width: 1024px) {
     width: auto;
     padding: ${pxToRem(32)};
   }
@@ -50,7 +49,7 @@ export const Details = styled.div`
 `
 
 export const Icon = styled.div`
-  @media (min-width: ${pxToRem(500)}) {
+  @media (min-width: 1024px) {
     width: ${pxToRem(48)};
     height: ${pxToRem(48)};
   }

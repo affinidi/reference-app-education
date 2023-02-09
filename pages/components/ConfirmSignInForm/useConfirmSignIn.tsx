@@ -1,6 +1,11 @@
-import { ClipboardEventHandler, KeyboardEvent, useMemo, useRef, useState } from 'react'
+import {
+  ClipboardEventHandler,
+  KeyboardEvent,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 
-import { ROUTES } from 'utils'
 import { Keys } from 'enums/keys'
 
 import * as S from './ConfirmSignInForm.styled'
@@ -18,17 +23,6 @@ const FROM_ZERO_TO_NINE = Array(10)
   .map((_, idx) => idx.toString())
 
 export const useConfirmSignIn = (message?: string) => {
-  const pathTo = (appFlow: string | null) => {
-    switch (appFlow) {
-      case 'holder':
-        return ROUTES.holder.home
-      case 'issuer':
-        return ROUTES.issuer.credentialForm
-      default:
-        return ROUTES.home
-    }
-  }
-
   const [verifyCode, setVerifyCode] = useState<OTPCode>({
     0: null,
     1: null,
@@ -38,11 +32,14 @@ export const useConfirmSignIn = (message?: string) => {
     5: null,
   })
 
-  const computedCode = useMemo(() => CodeObjectToString(verifyCode), [verifyCode])
+  const computedCode = useMemo(
+    () => CodeObjectToString(verifyCode),
+    [verifyCode]
+  )
 
   const refInputs = Array.from({ length: INPUT_ELEMENTS_AMOUNT }, () =>
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null)
   )
 
   const partialUpdate = (newState: OTPCode) =>
@@ -86,7 +83,7 @@ export const useConfirmSignIn = (message?: string) => {
         ...acc,
         [idx]: curr,
       }),
-      {},
+      {}
     )
 
     partialUpdate(verifyCodePasted)
@@ -103,7 +100,7 @@ export const useConfirmSignIn = (message?: string) => {
       key={index}
       className={index.toString()}
       autoFocus={index === 0}
-      type="text"
+      type='text'
       ref={refInputs[index]}
       hasError={Boolean(message)}
       maxLength={1}
@@ -112,7 +109,6 @@ export const useConfirmSignIn = (message?: string) => {
   ))
 
   return {
-    pathTo,
     computedCode,
     inputs,
     isButtonDisabled,
