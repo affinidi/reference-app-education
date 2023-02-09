@@ -7,18 +7,18 @@ import mortarBoard from 'public/images/mortar-board.svg'
 import * as S from './certificatetDetails.styled'
 
 export type EducationCertDetailsProps = {
-  eventName: string
+  courseTitle: string
   studentName: string
-  startDate: string
+  institution: string
+  dateOfCompletion: string
   qrCode: string
-  location: string
 }
 
 export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
-  eventName,
+  courseTitle,
   studentName,
-  startDate,
-  location,
+  institution,
+  dateOfCompletion,
   qrCode,
 }) => (
   <S.EducationDetailsCard>
@@ -27,19 +27,19 @@ export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
 
       <S.DataCardInnerContainer justifyContent='space-between'>
         <div className='grid grid-row-3 sm:grid-row-4'>
-          <S.Data variant='h5'>{eventName}</S.Data>
+          <S.Data variant='h5'>{courseTitle}</S.Data>
           <S.Data variant='s1'>{studentName}</S.Data>
         </div>
 
         <div className='grid sm:grid-cols-2 gap-y-7'>
           <div className='grid'>
             <Typography variant='p3'>Issuing institution</Typography>
-            <S.Data variant='p4'>{location} </S.Data>
+            <S.Data variant='p4'>{institution}</S.Data>
           </div>
 
           <div className='grid'>
             <Typography variant='p3'>Date of completion</Typography>
-            <S.Data variant='p4'>{startDate} </S.Data>
+            <S.Data variant='p4'>{dateOfCompletion}</S.Data>
           </div>
         </div>
       </S.DataCardInnerContainer>

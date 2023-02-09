@@ -40,7 +40,7 @@ const EducationCertificate: FC<EducationCertProps> = ({
           </S.MortarBoardHatIconContainer>
 
           <Typography variant='h6'>{credential.title}</Typography>
-          <Typography variant='s2'>{credential.location}</Typography>
+          <Typography variant='s2'>{credential.institution}</Typography>
         </Box>
 
         <Box direction='row' gap={8}>

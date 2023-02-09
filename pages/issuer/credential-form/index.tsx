@@ -44,16 +44,16 @@ const CredentialForm: FC = () => {
                       placeholder='Enter course title'
                       name='courseTitle'
                       maxLength={100}
-                      value={formikProps.values.eventName}
+                      value={formikProps.values.courseTitle}
                       onChange={(_, event) => formikProps.handleChange(event)}
                       hasError={
-                        formikProps.touched.eventName
-                          ? Boolean(formikProps.errors.eventName)
+                        formikProps.touched.courseTitle
+                          ? Boolean(formikProps.errors.courseTitle)
                           : false
                       }
                       helpText={
-                        formikProps.touched.eventName
-                          ? formikProps.errors.eventName
+                        formikProps.touched.courseTitle
+                          ? formikProps.errors.courseTitle
                           : ''
                       }
                       onBlur={formikProps.handleBlur}
@@ -61,36 +61,36 @@ const CredentialForm: FC = () => {
                     <S.InputWrapper
                       label='Issuing institution'
                       placeholder='Issuing institution'
-                      name='issuingInstitution'
+                      name='institution'
                       maxLength={500}
-                      value={formikProps.values.eventLocation}
+                      value={formikProps.values.institution}
                       onChange={(_, event) => formikProps.handleChange(event)}
                       hasError={
-                        formikProps.touched.eventLocation
-                          ? Boolean(formikProps.errors.eventLocation)
+                        formikProps.touched.institution
+                          ? Boolean(formikProps.errors.institution)
                           : false
                       }
                       helpText={
-                        formikProps.touched.eventLocation
-                          ? formikProps.errors.eventLocation
+                        formikProps.touched.institution
+                          ? formikProps.errors.institution
                           : ''
                       }
                       onBlur={formikProps.handleBlur}
                     />
                     <S.InputWrapper
                       label='Date of completion'
-                      name='DateOfCompletion'
+                      name='dateOfCompletion'
                       type='date'
-                      value={formikProps.values.eventStartDateTime}
+                      value={formikProps.values.dateOfCompletion}
                       onChange={(_, event) => formikProps.handleChange(event)}
                       hasError={
-                        formikProps.touched.eventStartDateTime
-                          ? Boolean(formikProps.errors.eventStartDateTime)
+                        formikProps.touched.dateOfCompletion
+                          ? Boolean(formikProps.errors.dateOfCompletion)
                           : false
                       }
                       helpText={
-                        formikProps.touched.eventStartDateTime
-                          ? formikProps.errors.eventStartDateTime
+                        formikProps.touched.dateOfCompletion
+                          ? formikProps.errors.dateOfCompletion
                           : ''
                       }
                       onBlur={formikProps.handleBlur}

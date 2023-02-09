@@ -15,32 +15,21 @@ import {
 import { issuanceService } from 'services/issuance'
 
 export const adjustForUTCOffset = (date: Date) => {
-  return new Date(
-    date.getUTCFullYear(),
-    date.getUTCMonth(),
-    date.getUTCDate(),
-    date.getUTCHours(),
-    date.getUTCMinutes(),
-    date.getUTCSeconds(),
-  )
+  return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
 }
 
-export type EventSubjectData = {
-  eventName: string
-  eventLocation: string
-  eventStartDateTime: string
-  eventEndDateTime: string
-  eventDescription: string
+export type CredentialSubjectData = {
+  courseTitle: string
+  institution: string
+  dateOfCompletion: string
   name: string
   email: string
 }
 
-export const initialValues: EventSubjectData = {
-  eventName: '',
-  eventLocation: '',
-  eventStartDateTime: '',
-  eventEndDateTime: '',
-  eventDescription: '',
+export const initialValues: CredentialSubjectData = {
+  courseTitle: '',
+  institution: '',
+  dateOfCompletion: '',
   name: '',
   email: '',
 }
@@ -50,11 +39,12 @@ export const useCredentialForm = () => {
   const [isCreating, setIsCreating] = useState(false)
 
   const handleSubmit = useCallback(
-    async (values: EventSubjectData) => {
+    async (values: CredentialSubjectData) => {
       setIsCreating(true)
 
       const walletUrl = `${window.location.origin}/holder/claim`
-      const { schemaType, jsonSchema, jsonLdContext } = parseSchemaURL(JSON_SCHEMA_URL)
+      const { schemaType, jsonSchema, jsonLdContext } =
+        parseSchemaURL(JSON_SCHEMA_URL)
 
       const issuanceJson: CreateIssuanceInput = {
         template: {
@@ -79,24 +69,24 @@ export const useCredentialForm = () => {
           },
         },
         credentialSubject: {
-          startDate: format(
-            adjustForUTCOffset(new Date(values.eventStartDateTime)),
-            "yyyy-MM-dd'T'HH:mm:ss'Z'",
+          dateOfCompletion: format(
+            adjustForUTCOffset(new Date(values.dateOfCompletion)),
+            'yyyy-MM-dd'
           ),
-          endDate: format(
-            adjustForUTCOffset(new Date(values.eventEndDateTime)),
-            "yyyy-MM-dd'T'HH:mm:ss'Z'",
-          ),
-          place: values.eventLocation,
-          eventName: values.eventName,
-          eventDescription: values.eventDescription,
-          name: values.name,
-          email: values.email,
+          courseTitle: values.courseTitle,
+          institution: values.institution,
+          student: {
+            name: values.name,
+            email: values.email,
+          },
         },
       }
 
       try {
-        const issuanceId = await issuanceService.createIssuance(apiKeyHash, issuanceJson)
+        const issuanceId = await issuanceService.createIssuance(
+          apiKeyHash,
+          issuanceJson
+        )
         await issuanceService.createOffer(apiKeyHash, issuanceId.id, offerInput)
 
         router.push(ROUTES.issuer.result)
@@ -104,42 +94,26 @@ export const useCredentialForm = () => {
         setIsCreating(false)
       }
     },
-    [router],
+    [router]
   )
 
-  const validate = useCallback((values: EventSubjectData) => {
-    const errors = {} as Partial<EventSubjectData>
+  const validate = useCallback((values: CredentialSubjectData) => {
+    const errors = {} as Partial<CredentialSubjectData>
 
-    if (!values.eventName) {
-      errors.eventName = 'Mandatory field'
+    if (!values.courseTitle) {
+      errors.courseTitle = 'Mandatory field'
     }
 
-    if (!values.eventStartDateTime) {
-      errors.eventStartDateTime = 'Mandatory field'
+    if (!values.institution) {
+      errors.institution = 'Mandatory field'
     }
 
-    if (!values.eventEndDateTime) {
-      errors.eventEndDateTime = 'Mandatory field'
-    }
-
-    if (
-      values.eventStartDateTime &&
-      values.eventEndDateTime &&
-      new Date(values.eventStartDateTime) > new Date(values.eventEndDateTime)
-    ) {
-      errors.eventStartDateTime = 'Start date time must not be greater than end date time'
-    }
-
-    if (!values.eventLocation) {
-      errors.eventLocation = 'Mandatory field'
+    if (!values.dateOfCompletion) {
+      errors.dateOfCompletion = 'Mandatory field'
     }
 
     if (!values.name) {
       errors.name = 'Mandatory field'
-    }
-
-    if (!values.email) {
-      errors.email = 'Mandatory field'
     }
 
     if (!values.email) {
