@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { AnyData } from 'services/cloud-wallet/cloud-wallet.api'
 import { format } from 'date-fns'
 
-import EducationCertDetails from '../certificateDetails/certificateDetails'
+import { VcCredentialDetails } from '../vcDetails/vcCredentialDetails'
 
 import * as S from './Credential.styled'
 
@@ -49,7 +49,7 @@ const getDetails = ({
   if (typeof detailsObject === 'object' && detailsObject !== null) {
     return (
       qrCode && (
-        <EducationCertDetails
+        <VcCredentialDetails
           courseTitle={detailsObject.courseTitle}
           studentName={detailsObject.student.name}
           dateOfCompletion={format(

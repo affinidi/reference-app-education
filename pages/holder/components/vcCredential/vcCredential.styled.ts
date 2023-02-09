@@ -2,7 +2,7 @@ import { Box } from 'components'
 import styled from 'styled-components'
 import { pxToRem } from 'utils'
 
-export const Certificate = styled(Box)`
+export const VcCredential = styled(Box)`
   padding: ${pxToRem(24)};
   margin-top: ${pxToRem(40)};
   min-height: initial;
