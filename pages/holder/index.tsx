@@ -7,7 +7,7 @@ import { useAuthContext } from 'hooks/useAuthContext'
 import { Credential } from './types'
 
 import { Container, Header, Spinner, Typography } from 'components'
-import VcCard from './components/vcCard/vcCard'
+import VcCard from './components/VcCard/VcCard'
 import NoData from 'public/images/no-tickets.svg'
 import { JSON_SCHEMA_URL } from 'utils'
 
