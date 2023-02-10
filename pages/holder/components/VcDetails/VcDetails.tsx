@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { Typography } from 'components'
 import mortarBoard from 'public/images/mortar-board.svg'
 
-import * as S from './certificatetDetails.styled'
+import * as S from './VcDetails.styled'
 
-export type EducationCertDetailsProps = {
+export type VcDetailsProps = {
   courseTitle: string
   studentName: string
   institution: string
@@ -14,14 +14,14 @@ export type EducationCertDetailsProps = {
   qrCode: string
 }
 
-export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
+export const VcDetails: FC<VcDetailsProps> = ({
   courseTitle,
   studentName,
   institution,
   dateOfCompletion,
   qrCode,
 }) => (
-  <S.EducationDetailsCard>
+  <S.DetailsCard>
     <S.DataCard>
       <Image src={mortarBoard} alt='Mortar Board' aria-label='mortar-board' />
 
@@ -48,7 +48,7 @@ export const EducationCertDetails: FC<EducationCertDetailsProps> = ({
     <S.QrCodeCard>
       <img src={qrCode} alt='QR Code' />
     </S.QrCodeCard>
-  </S.EducationDetailsCard>
+  </S.DetailsCard>
 )
 
-export default EducationCertDetails
+export default VcDetails

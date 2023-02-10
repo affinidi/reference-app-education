@@ -47,7 +47,7 @@ export const Data = styled(Typography)`
   color: ${(props) => props.theme.colors.neutral.primary['100']};
 `
 
-export const EducationDetailsCard = styled(Box)`
+export const DetailsCard = styled(Box)`
   margin-top: ${pxToRem(48)};
   flex-direction: row;
   box-shadow: 0 ${pxToRem(4)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.1);
