@@ -10,7 +10,7 @@ import { Credential } from 'pages/holder/types'
 import CertDateIcon from 'public/images/cert-icon.svg'
 import MortarBoard from 'public/images/mortar-board.svg'
 
-import * as S from './VcCard.styled'
+import * as S from './VcCards.styled'
 
 export type VcCardProps = {
   credential: Credential

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Typography } from 'components'
 import mortarBoard from 'public/images/mortar-board.svg'
 
-import * as S from './VcDetails.styled'
+import * as S from './VcDetail.styled'
 
 export type VcDetailsProps = {
   courseTitle: string
