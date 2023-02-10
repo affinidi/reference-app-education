@@ -7,7 +7,7 @@ import { useAuthContext } from 'hooks/useAuthContext'
 import { Credential } from './types'
 
 import { Container, Header, Spinner, Typography } from 'components'
-import VcCredential from './components/vcCredential/vcCredential'
+import VcCard from './components/vcCard/vcCard'
 import NoData from 'public/images/no-tickets.svg'
 import { JSON_SCHEMA_URL } from 'utils'
 
@@ -106,7 +106,7 @@ const Home: FC = () => {
       }
 
       return (
-        <VcCredential
+        <VcCard
           key={credentialItem.id}
           credential={credential}
           isValid={isValid}

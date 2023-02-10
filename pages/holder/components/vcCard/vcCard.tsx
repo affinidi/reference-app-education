@@ -10,14 +10,14 @@ import { Credential } from 'pages/holder/types'
 import CertDateIcon from 'public/images/cert-icon.svg'
 import MortarBoard from 'public/images/mortar-board.svg'
 
-import * as S from './vcCredential.styled'
+import * as S from './vcCard.styled'
 
-export type VcCredentialProps = {
+export type VcCardProps = {
   credential: Credential
   isValid: boolean
 }
 
-const VcCredential: FC<VcCredentialProps> = ({ credential, isValid }) => {
+const VcCard: FC<VcCardProps> = ({ credential, isValid }) => {
   const router = useRouter()
 
   const handleClick = () => {
@@ -25,7 +25,7 @@ const VcCredential: FC<VcCredentialProps> = ({ credential, isValid }) => {
   }
 
   return (
-    <S.VcCredential onClick={handleClick}>
+    <S.VcCard onClick={handleClick}>
       <Box gap={32}>
         <Box>
           <S.MortarBoardHatIconContainer>
@@ -49,8 +49,8 @@ const VcCredential: FC<VcCredentialProps> = ({ credential, isValid }) => {
           <Typography variant='s2'>{credential.date}</Typography>
         </Box>
       </Box>
-    </S.VcCredential>
+    </S.VcCard>
   )
 }
 
-export default VcCredential
+export default VcCard

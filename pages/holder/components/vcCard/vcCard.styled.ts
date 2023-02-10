@@ -2,7 +2,7 @@ import { Box } from 'components'
 import styled from 'styled-components'
 import { pxToRem } from 'utils'
 
-export const VcCredential = styled(Box)`
+export const VcCard = styled(Box)`
   padding: ${pxToRem(24)};
   margin-top: ${pxToRem(40)};
   min-height: initial;
